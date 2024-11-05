@@ -41,7 +41,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="/" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">PPID</h1>
@@ -77,7 +77,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Login</a>
+      <a class="btn-getstarted" href="dashboard">Login</a>
 
     </div>
   </header>
@@ -142,7 +142,7 @@
             </div> --}}
 
             <div class="col-lg-12">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action="/keberatan" method="get" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
                     <h4>A. INFORMASI PENGAJU KEBERATAN</h4>
                     <div class="col-md-12">
@@ -203,9 +203,50 @@
 
                     <h4>B. INFORMASI PENGAJU KEBERATAN*</h4>
 
-                    <div class="col-md-12">
-                        <label for="name-field" class="pb-2">Belooommmmmmmmmmmmmm</label>
-                        <input type="text" name="name" id="name-field" class="form-control" required="">
+                    <div class="col-md-12 pb-3">
+                        {{-- <label class="pb-2">Alasan Pengajuan Keberatan*</label><br> --}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason1" value="reason1" required>
+                            <label class="form-check-label" for="reason1">
+                                a. Permohonan Informasi ditolak.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason2" value="reason2" required>
+                            <label class="form-check-label" for="reason2">
+                                b. Informasi berkala tidak disediakan
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason3" value="reason3" required>
+                            <label class="form-check-label" for="reason3">
+                                c. Permintaan informasi tidak ditanggapi
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason4" value="reason4" required>
+                            <label class="form-check-label" for="reason4">
+                                d. Permintaan informasi ditanggapi tidak sebagaimana yang diminta
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason5" value="reason5" required>
+                            <label class="form-check-label" for="reason5">
+                                e. Permintaan informasi tidak dipenuhi
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason5" value="reason5" required>
+                            <label class="form-check-label" for="reason5">
+                                f. Biaya yang dikenakan tidak wajar
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="keberatan_reason" id="reason5" value="reason5" required>
+                            <label class="form-check-label" for="reason5">
+                                e. Informasi disampaikan melebihi jangka waktu yang ditentukan
+                            </label>
+                        </div>
                     </div>
 
                     <h4>C. KASUS POSISI</h4>
@@ -329,7 +370,6 @@
 
   <!-- Vendor JS Files -->
   <script src={{asset("assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}></script>
-  <script src={{asset("assets/vendor/php-email-form/validate.js")}}></script>
   <script src={{asset("assets/vendor/aos/aos.js")}}></script>
   <script src={{asset("assets/vendor/glightbox/js/glightbox.min.js")}}></script>
   <script src={{asset("assets/vendor/swiper/swiper-bundle.min.js")}}></script>
