@@ -75,13 +75,13 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> --}}
-          <li><a href="/">Home</a></li>
+          <li><a href={{ url("/") }}>Home</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <a class="btn-getstarted" href="">{{ auth()->user()->name}}</a>
-      <a class="btn text-white" href="/logout">
+      <a class="btn text-white" href={{ url("/logout") }}>
         <i class="fa fa-sign-out"></i>
       </a>
 
@@ -95,7 +95,7 @@
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href={{ url("/") }}>Home</a></li>
             <li class="current">Dashboard</li>
           </ol>
         </nav>
@@ -136,7 +136,7 @@
                         <td>{{$n->no_telp}}</td>
                         <td class="text-center">Selesai</td>
                         <td class="text-center">
-                            <a href="/dashboard/{{ $n->id }}" class="btn btn-primary btn-sm">
+                            <a href={{ url("/dashboard/$n->id") }} class="btn btn-primary btn-sm">
                                 <i class="fa fa-eye"></i> <!-- Eye icon instead of text -->
                             </a>
                         </td>

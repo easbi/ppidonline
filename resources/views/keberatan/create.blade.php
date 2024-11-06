@@ -41,7 +41,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="/" class="logo d-flex align-items-center me-auto">
+      <a href={{url("/")}} class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">PPID</h1>
@@ -72,7 +72,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> --}}
-          <li><a href="/">Home</a></li>
+          <li><a href={{url("/")}}>Home</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -89,7 +89,7 @@
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href={{url("/")}}>Home</a></li>
             <li class="current">Pengajuan Keberatan atas Permohonan Informasi Publik</li>
           </ol>
         </nav>
@@ -142,7 +142,7 @@
             </div> --}}
 
             <div class="col-lg-12">
-              <form action="/keberatan" method="get" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action={{url("/keberatan")}} method="get" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
                     <h4>A. INFORMASI PENGAJU KEBERATAN</h4>
                     <div class="col-md-12">
