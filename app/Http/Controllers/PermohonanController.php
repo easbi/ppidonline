@@ -21,6 +21,9 @@ class PermohonanController extends Controller
     public function index()
     {
         return view('permohonan.index');
+
+        $data = Permohonan::get();
+        // dd($data);
         //utk publik/umum tampilkan halaman index sederhana yg memuat tombol utk input permohonan informasi
         //tampilkan dashboard sederhana yg nampilin 3 indikator, jumlah permohonan hari ini, jumlah permohonan informasi bulan ini, dan jumlah permohoann informasi total tahun ini
 
@@ -46,39 +49,41 @@ class PermohonanController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+
         $request->validate([
-            'bukti_identitas_diri' => 'required',
+            // 'bukti_identitas_diri' => 'required',
             'nama' => 'required',
             'alamat' => 'required',
-            'pekerjaan',
+            'pekerjaan' => 'required',
             'no_telp' => 'required',
-            'email' => 'required',
+            // 'email' => 'required',
             'rincian_info' => 'required',
             'tujuan_info' => 'required',
             'cara_peroleh_info' => 'required',
             'cara_dapat_salinan_info' => 'required',
-            'id_pelayanan_ppid' => 'required',
-            'verifikasi_pemohon' => 'required',
-            'tgl'=> 'required',
+            // 'id_pelayanan_ppid' => 'required',
+            // 'verifikasi_pemohon' => 'required',
+            // 'tgl'=> 'required',
         ]);
 
         $result = Permohonan::create([
-                'bukti_identitas_diri' => $request->bukti_identitas_diri,
+                // 'bukti_identitas_diri' => $request->bukti_identitas_diri,
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
                 'pekerjaan' => $request->pekerjaan,
                 'no_telp' => $request->no_telp,
-                'email' => $request->email,
+                // 'email' => $request->email,
                 'rincian_info' => $request->rincian_info,
                 'tujuan_info' => $request->tujuan_info,
                 'cara_peroleh_info' => $request->cara_peroleh_info,
                 'cara_dapat_salinan_info' => $request->cara_dapat_salinan_info,
-                'id_pelayanan_ppid' => $request->id_pelayanan_ppid,
-                'verifikasi_pemohon' => $request->verifikasi_pemohon,
+                // 'id_pelayanan_ppid' => $request->id_pelayanan_ppid,
+                // 'verifikasi_pemohon' => $request->verifikasi_pemohon,
             ]);
 
          return redirect()->route('permohonan.index')
-                        ->with('success','Kegiatan Sukses Ditambahkan!');
+                        ->with('success','Data Berhasil Ditambahkan!');
     }
 
     /**

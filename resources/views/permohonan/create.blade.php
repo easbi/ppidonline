@@ -77,7 +77,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Login</a>
+      <a class="btn-getstarted" href="/dashboard">Login</a>
 
     </div>
   </header>
@@ -142,57 +142,58 @@
             </div> --}}
 
             <div class="col-lg-12">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action="/permohonan" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200" enctype="multipart/form-data">
+                @csrf
                 <div class="row gy-4">
 
                   <div class="col-md-12">
-                    <label for="name-field" class="pb-2">Nama</label>
-                    <input type="text" name="name" id="name-field" class="form-control" required="">
+                    <label for="nama" class="pb-2">Nama</label>
+                    <input type="text" name="nama" id="nama" class="form-control" required="">
                   </div>
 
                   <div class="col-md-12">
-                    <label for="name-field" class="pb-2">Nomor Telepone / E-Mail</label>
-                    <input type="text" name="name" id="name-field" class="form-control" required="">
+                    <label for="no_telp" class="pb-2">Nomor Telepone / E-Mail</label>
+                    <input type="text" name="no_telp" id="no_telp" class="form-control" required="">
                   </div>
 
                   <div class="col-md-12">
-                    <label for="message-field" class="pb-2">Alamat</label>
-                    <textarea class="form-control" name="message" rows="5" id="message-field" required=""></textarea>
+                    <label for="alamat" class="pb-2">Alamat</label>
+                    <textarea class="form-control" name="alamat" rows="5" id="alamat" required=""></textarea>
                   </div>
 
                   <div class="col-md-12">
-                    <label for="email-field" class="pb-2">Pekerjaan</label>
-                    <input type="email" class="form-control" name="email" id="email-field" required="">
+                    <label for="pekerjaan" class="pb-2">Pekerjaan</label>
+                    <input type="text" class="form-control" name="pekerjaan" id="pekerjaan" required="">
                   </div>
 
                   <div class="col-md-12">
-                    <label for="message-field" class="pb-2">Rincian Informasi yang Dibutuhkan</label>
-                    <textarea class="form-control" name="message" rows="5" id="message-field" required=""></textarea>
+                    <label for="rincian_info" class="pb-2">Rincian Informasi yang Dibutuhkan</label>
+                    <textarea class="form-control" name="rincian_info" rows="5" id="rincian_info" required=""></textarea>
                   </div>
 
                   <div class="col-md-12">
-                    <label for="message-field" class="pb-2">Tujuan Penggunaan Informasi</label>
-                    <textarea class="form-control" name="message" rows="5" id="message-field" required=""></textarea>
+                    <label for="tujuan_info" class="pb-2">Tujuan Penggunaan Informasi</label>
+                    <textarea class="form-control" name="tujuan_info" rows="5" id="tujuan_info" required=""></textarea>
                   </div>
 
                   <div class="col-md-12">
-                    <label for="subject-field" class="pb-2">Cara Memperoleh Informasi</label>
-                    <select class="form-control" name="subject" id="subject-field" required>
+                    <label for="cara_peroleh_info" class="pb-2">Cara Memperoleh Informasi</label>
+                    <select class="form-control" name="cara_peroleh_info" id="cara_peroleh_info" required>
                       <option value="">-- Pilih Cara Memperoleh Informasi --</option>
-                      <option value="1">Melihat/membaca/mendengarkan/Mencatat***</option>
-                      <option value="2">Mendapatkan salinan informasi (hardcopy/softcopy)***</option>
+                      <option value="Melihat/membaca/mendengarkan/Mencatat***">Melihat/membaca/mendengarkan/Mencatat***</option>
+                      <option value="Mendapatkan salinan informasi (hardcopy/softcopy)***">Mendapatkan salinan informasi (hardcopy/softcopy)***</option>
                     </select>
                   </div>
 
                   <div class="col-md-12">
-                    <label for="subject-field" class="pb-2">Cara Mendapatkan Salinan Informasi</label>
-                    <select class="form-control" name="subject" id="subject-field" required>
+                    <label for="cara_dapat_salinan_info" class="pb-2">Cara Mendapatkan Salinan Informasi</label>
+                    <select class="form-control" name="cara_dapat_salinan_info" id="cara_dapat_salinan_info" required>
                       <option value="">-- Pilih Cara Mendapatkan Salinan Informasi --</option>
-                      <option value="1">Mengambil Langsung</option>
-                      <option value="2">Kurir</option>
-                      <option value="3">Pos</option>
-                      <option value="4">Faksimili</option>
-                      <option value="5">Email</option>
+                      <option value="Mengambil Langsung">Mengambil Langsung</option>
+                      <option value="Kurir">Kurir</option>
+                      <option value="Pos">Pos</option>
+                      <option value="Faksimili">Faksimili</option>
+                      <option value="Email">Email</option>
                     </select>
                   </div>
 
@@ -325,7 +326,7 @@
 
   <!-- Vendor JS Files -->
   <script src={{asset("assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}></script>
-  <script src={{asset("assets/vendor/php-email-form/validate.js")}}></script>
+  {{-- <script src={{asset("assets/vendor/php-email-form/validate.js")}}></script> --}}
   <script src={{asset("assets/vendor/aos/aos.js")}}></script>
   <script src={{asset("assets/vendor/glightbox/js/glightbox.min.js")}}></script>
   <script src={{asset("assets/vendor/swiper/swiper-bundle.min.js")}}></script>
