@@ -72,12 +72,12 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> --}}
-          <li><a href="/">Home</a></li>
+          <li><a href={{url("/")}}>Home</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="/dashboard">Login</a>
+      <a class="btn-getstarted" href={{url("/dashboard")}}>Login</a>
 
     </div>
   </header>
@@ -89,7 +89,7 @@
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href={{url("/")}}>Home</a></li>
             <li class="current">Permohonan Informasi Publik</li>
           </ol>
         </nav>
@@ -142,7 +142,7 @@
             </div> --}}
 
             <div class="col-lg-12">
-              <form action="/permohonan" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200" enctype="multipart/form-data">
+              <form action={{url("/permohonan")}} method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200" enctype="multipart/form-data">
                 @csrf
                 <div class="row gy-4">
 
